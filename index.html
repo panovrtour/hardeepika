@@ -25,12 +25,19 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
             background: var(--white);
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4 {
@@ -43,8 +50,9 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             transition: all 0.3s ease;
         }
@@ -122,6 +130,17 @@
         }
 
         .nav-cta::after { display: none !important; }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
 
         /* ===== HERO ===== */
         .hero {
@@ -254,6 +273,7 @@
             align-items: center;
             gap: 0.5rem;
             border: 2px solid var(--gold);
+            white-space: nowrap;
         }
 
         .btn-primary:hover {
@@ -276,6 +296,7 @@
             align-items: center;
             gap: 0.5rem;
             border: 2px solid rgba(255,255,255,0.3);
+            white-space: nowrap;
         }
 
         .btn-secondary:hover {
@@ -685,6 +706,7 @@
         .achievement-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px;
             padding: 2rem;
@@ -806,20 +828,22 @@
         .cert-item .check {
             color: var(--gold);
             font-size: 1rem;
+            flex-shrink: 0;
         }
 
         .cert-item .text {
             font-size: 0.9rem;
             color: var(--text-dark);
+            flex: 1;
         }
 
         .cert-item .status {
             font-size: 0.75rem;
             color: var(--text-light);
-            margin-left: auto;
             background: var(--cream);
             padding: 0.2rem 0.6rem;
             border-radius: 10px;
+            white-space: nowrap;
         }
 
         /* ===== EDUCATION ===== */
@@ -918,7 +942,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
 
         .contact-info h3 {
@@ -951,6 +975,7 @@
             color: var(--gold);
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .contact-item:hover .icon {
@@ -969,6 +994,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s ease;
+            word-break: break-all;
         }
 
         .contact-item .text a:hover {
@@ -978,174 +1004,17 @@
         .contact-form {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px;
             padding: 2.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 10px;
-            padding: 0.9rem 1.2rem;
-            color: var(--white);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: rgba(255,255,255,0.12);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.4);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            padding: 1rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .submit-btn:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #0f1720;
-            color: rgba(255,255,255,0.6);
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-image {
-                display: none;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid,
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .achievements-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                width: 100%;
-                margin-left: 0;
-                padding-left: 50px;
-                padding-right: 0;
-                justify-content: flex-start;
-            }
-
-            .timeline-dot,
-            .timeline-item:nth-child(even) .timeline-dot {
-                left: 12px;
-                right: auto;
-            }
-
-            .achievements-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
         }
 
         /* ===== CREATIVE CONTACT SECTION ===== */
         .why-me-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
             padding: 2.5rem;
@@ -1221,6 +1090,7 @@
             flex-direction: column;
             align-items: center;
             gap: 0.3rem;
+            color: rgba(255,255,255,0.6);
         }
 
         .reason-tab:hover {
@@ -1386,9 +1256,542 @@
             transform: translateY(-2px);
         }
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f1720;
+            color: rgba(255,255,255,0.6);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN - TABLET (max-width: 1024px)
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .skills-grid,
+            .education-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-image .experience-badge {
+                bottom: -10px;
+                right: 10px;
+                padding: 1.5rem;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN - MOBILE (max-width: 768px)
+           ============================================ */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .nav-links a::after {
+                bottom: -8px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-cta {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            /* Hero */
+            .hero {
+                padding-top: 70px;
+                min-height: auto;
+                padding-bottom: 4rem;
+            }
+
+            .hero-container {
+                padding: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 1.2rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            /* Sections */
+            section {
+                padding: 3.5rem 1.25rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            /* About */
+            .about-grid {
+                gap: 2rem;
+            }
+
+            .about-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .about-content p {
+                font-size: 0.95rem;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about-highlight {
+                gap: 0.8rem;
+            }
+
+            .about-highlight .icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .about-image .experience-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1rem;
+                padding: 1.2rem;
+                display: inline-block;
+            }
+
+            .experience-badge .years {
+                font-size: 2rem;
+            }
+
+            /* Timeline */
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 50px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 12px;
+                right: auto;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .timeline-content ul li {
+                font-size: 0.85rem;
+                padding-left: 1.3rem;
+            }
+
+            /* Achievements */
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .achievement-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .achievement-card .icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .achievement-card .number {
+                font-size: 2rem;
+            }
+
+            .achievement-card .label {
+                font-size: 0.8rem;
+            }
+
+            /* Skills */
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .skill-category {
+                padding: 1.8rem;
+            }
+
+            .skill-category .icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.1rem;
+            }
+
+            .skill-category h3 {
+                font-size: 1.1rem;
+            }
+
+            .skill-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .cert-item {
+                flex-wrap: wrap;
+                gap: 0.4rem;
+            }
+
+            .cert-item .text {
+                width: 100%;
+                font-size: 0.85rem;
+            }
+
+            /* Education */
+            .education-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .edu-card {
+                padding: 1.8rem;
+            }
+
+            .edu-card h3 {
+                font-size: 1rem;
+            }
+
+            .edu-card .school {
+                font-size: 0.9rem;
+            }
+
+            .edu-card .detail {
+                font-size: 0.85rem;
+            }
+
+            /* Contact */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info p {
+                font-size: 0.95rem;
+            }
+
+            .contact-item {
+                gap: 0.8rem;
+            }
+
+            .contact-item .icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+
+            .contact-item .text a {
+                font-size: 0.9rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            /* Creative Contact Card */
+            .why-me-card {
+                padding: 1.5rem;
+            }
+
+            .why-me-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .reason-tabs {
+                gap: 0.3rem;
+                padding: 0.3rem;
+            }
+
+            .reason-tab {
+                padding: 0.6rem 0.3rem;
+            }
+
+            .reason-tab .tab-num {
+                font-size: 0.9rem;
+            }
+
+            .reason-tab .tab-label {
+                font-size: 0.65rem;
+            }
+
+            .reason-content {
+                min-height: 260px;
+            }
+
+            .reason-panel h4 {
+                font-size: 1rem;
+            }
+
+            .reason-panel p {
+                font-size: 0.85rem;
+            }
+
+            .panel-metric {
+                padding: 0.6rem 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.3rem;
+            }
+
+            .panel-metric .metric-value {
+                font-size: 1.3rem;
+            }
+
+            .panel-metric .metric-desc {
+                font-size: 0.75rem;
+            }
+
+            .cta-prompt p {
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .cta-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN - SMALL MOBILE (max-width: 480px)
+           ============================================ */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.6rem;
+                letter-spacing: 0.5px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-label {
+                font-size: 0.75rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-card .number {
+                font-size: 2.2rem;
+            }
+
+            .timeline-content {
+                padding: 1.2rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1rem;
+            }
+
+            .timeline-content .company {
+                font-size: 0.85rem;
+            }
+
+            .timeline-content ul li {
+                font-size: 0.8rem;
+            }
+
+            .about-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .why-me-header h3 {
+                font-size: 1.1rem;
+            }
+
+            .reason-content {
+                min-height: 280px;
+            }
+
+            .cta-prompt {
+                margin-top: 1.5rem;
+                padding-top: 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-container {
+                padding: 0.8rem 1.25rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) {
+            .timeline-content:hover,
+            .achievement-card:hover,
+            .skill-category:hover,
+            .edu-card:hover {
+                transform: none;
+            }
+
+            .btn-primary:hover,
+            .btn-secondary:hover,
+            .cta-btn:hover {
+                transform: none;
+            }
         }
     </style>
 </head>
@@ -1398,7 +1801,10 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">HSA<span>.</span></a>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="active">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#achievements">Impact</a></li>
@@ -1907,6 +2313,31 @@
     </footer>
 
     <script>
+        // ===== MOBILE MENU =====
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinksEl = document.getElementById('navLinks');
+        const menuIcon = document.getElementById('menuIcon');
+        let menuOpen = false;
+
+        mobileMenuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navLinksEl.classList.toggle('active');
+            menuIcon.className = menuOpen ? 'fas fa-times' : 'fas fa-bars';
+            document.body.style.overflow = menuOpen ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (menuOpen) {
+                    menuOpen = false;
+                    navLinksEl.classList.remove('active');
+                    menuIcon.className = 'fas fa-bars';
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -1919,7 +2350,7 @@
 
         // Active nav link
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
+        const allNavLinks = document.querySelectorAll('.nav-links a');
 
         window.addEventListener('scroll', () => {
             let current = '';
@@ -1930,7 +2361,7 @@
                 }
             });
 
-            navLinks.forEach(link => {
+            allNavLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === '#' + current) {
                     link.classList.add('active');
@@ -1979,23 +2410,28 @@
             });
         });
 
-        // Auto-rotate tabs every 5 seconds
+        // Auto-rotate tabs every 5 seconds (only on desktop)
         let currentTab = 0;
         const tabCount = reasonTabs.length;
-        let autoRotate = setInterval(() => {
-            currentTab = (currentTab + 1) % tabCount;
-            reasonTabs[currentTab].click();
-        }, 5000);
+        let autoRotate;
 
-        // Pause auto-rotate on hover
-        const whyMeCard = document.querySelector('.why-me-card');
-        whyMeCard.addEventListener('mouseenter', () => clearInterval(autoRotate));
-        whyMeCard.addEventListener('mouseleave', () => {
+        function startAutoRotate() {
             autoRotate = setInterval(() => {
                 currentTab = (currentTab + 1) % tabCount;
                 reasonTabs[currentTab].click();
             }, 5000);
-        });
+        }
+
+        if (window.innerWidth > 768) {
+            startAutoRotate();
+        }
+
+        // Pause auto-rotate on hover (desktop only)
+        const whyMeCard = document.querySelector('.why-me-card');
+        if (window.innerWidth > 768) {
+            whyMeCard.addEventListener('mouseenter', () => clearInterval(autoRotate));
+            whyMeCard.addEventListener('mouseleave', startAutoRotate);
+        }
     </script>
 </body>
 </html>
