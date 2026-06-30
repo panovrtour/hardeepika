@@ -1142,6 +1142,250 @@
             }
         }
 
+        /* ===== CREATIVE CONTACT SECTION ===== */
+        .why-me-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .why-me-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .why-me-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .why-me-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--navy);
+            font-size: 1.5rem;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+            50% { box-shadow: 0 0 20px 5px rgba(201,168,76,0.2); }
+        }
+
+        .why-me-header h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .why-me-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .reason-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 0.4rem;
+        }
+
+        .reason-tab {
+            flex: 1;
+            padding: 0.8rem 0.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .reason-tab:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .reason-tab.active {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .reason-tab .tab-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            opacity: 0.5;
+        }
+
+        .reason-tab.active .tab-num {
+            opacity: 1;
+        }
+
+        .reason-tab .tab-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.7;
+        }
+
+        .reason-tab.active .tab-label {
+            opacity: 1;
+        }
+
+        .reason-content {
+            position: relative;
+            min-height: 220px;
+        }
+
+        .reason-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+
+        .reason-panel.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .panel-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(201,168,76,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .reason-panel h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .reason-panel p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .panel-metric {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(201,168,76,0.1);
+            border: 1px solid rgba(201,168,76,0.2);
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+        }
+
+        .panel-metric .metric-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .panel-metric .metric-desc {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.3;
+        }
+
+        .cta-prompt {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .cta-prompt p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-prompt p i {
+            color: var(--gold);
+            margin-right: 0.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-primary {
+            background: var(--gold);
+            color: var(--navy);
+            border: 2px solid var(--gold);
+        }
+
+        .cta-primary:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201,168,76,0.2);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -1590,27 +1834,68 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="mailto:hardeepikasingh1@gmail.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    <!-- Creative "Why Me?" Interactive Card -->
+                    <div class="why-me-card">
+                        <div class="why-me-header">
+                            <div class="why-me-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h3>Why Connect With Me?</h3>
+                            <p class="why-me-subtitle">Three reasons I'm the right fit for your team</p>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                        <div class="reason-tabs">
+                            <div class="reason-tab active" data-reason="1">
+                                <span class="tab-num">01</span>
+                                <span class="tab-label">Proven Results</span>
+                            </div>
+                            <div class="reason-tab" data-reason="2">
+                                <span class="tab-num">02</span>
+                                <span class="tab-label">Unique Blend</span>
+                            </div>
+                            <div class="reason-tab" data-reason="3">
+                                <span class="tab-num">03</span>
+                                <span class="tab-label">Growth Mindset</span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Opportunity at [Company Name]">
+                        <div class="reason-content">
+                            <div class="reason-panel active" id="reason-1">
+                                <div class="panel-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4>98%+ SLA Adherence</h4>
+                                <p>I don't just meet expectations — I exceed them. Leading 11 operations professionals while maintaining near-perfect SLA compliance across 150+ daily requests and 500+ monthly accounts.</p>
+                                <div class="panel-metric">
+                                    <span class="metric-value">95%+</span>
+                                    <span class="metric-desc">Resolution rate within SLA timelines</span>
+                                </div>
+                            </div>
+                            <div class="reason-panel" id="reason-2">
+                                <div class="panel-icon"><i class="fas fa-puzzle-piece"></i></div>
+                                <h4>Academia + Operations</h4>
+                                <p>Very few professionals bring 8 years of teaching finance to MBA graduates alongside hands-on wealth management experience. I translate complexity into clarity — whether training teams or advising clients.</p>
+                                <div class="panel-metric">
+                                    <span class="metric-value">750+</span>
+                                    <span class="metric-desc">Professionals trained in financial topics</span>
+                                </div>
+                            </div>
+                            <div class="reason-panel" id="reason-3">
+                                <div class="panel-icon"><i class="fas fa-rocket"></i></div>
+                                <h4>Always Evolving</h4>
+                                <p>Currently pursuing CFP designation alongside CSC. I built 17 knowledge base articles, streamlined transfer processing by 80%, and identified spurious market share of 53.79% for JCB India — I see gaps others miss.</p>
+                                <div class="panel-metric">
+                                    <span class="metric-value">17</span>
+                                    <span class="metric-desc">Knowledge base articles created</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="I'd like to discuss an opportunity..."></textarea>
+                        <div class="cta-prompt">
+                            <p><i class="fas fa-handshake"></i> Ready to discuss how I can drive results for your team?</p>
+                            <div class="cta-buttons">
+                                <a href="mailto:hardeepikasingh1@gmail.com?subject=Opportunity%20Discussion%20-%20%5BYour%20Company%5D&body=Hi%20Hardeepika,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20potential%20opportunity%20at%20our%20company.%0D%0A%0D%0ABest%20regards,%0D%0A%5BYour%20Name%5D" class="cta-btn cta-primary">
+                                    <i class="fas fa-envelope"></i> Email Me
+                                </a>
+                                <a href="https://www.linkedin.com/in/hardeepikasingh/" target="_blank" class="cta-btn cta-secondary">
+                                    <i class="fab fa-linkedin"></i> Message on LinkedIn
+                                </a>
+                            </div>
                         </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1674,6 +1959,42 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // ===== CREATIVE CONTACT TABS =====
+        const reasonTabs = document.querySelectorAll('.reason-tab');
+        const reasonPanels = document.querySelectorAll('.reason-panel');
+
+        reasonTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const reasonNum = tab.dataset.reason;
+
+                // Remove active from all tabs and panels
+                reasonTabs.forEach(t => t.classList.remove('active'));
+                reasonPanels.forEach(p => p.classList.remove('active'));
+
+                // Add active to clicked tab and corresponding panel
+                tab.classList.add('active');
+                document.getElementById('reason-' + reasonNum).classList.add('active');
+            });
+        });
+
+        // Auto-rotate tabs every 5 seconds
+        let currentTab = 0;
+        const tabCount = reasonTabs.length;
+        let autoRotate = setInterval(() => {
+            currentTab = (currentTab + 1) % tabCount;
+            reasonTabs[currentTab].click();
+        }, 5000);
+
+        // Pause auto-rotate on hover
+        const whyMeCard = document.querySelector('.why-me-card');
+        whyMeCard.addEventListener('mouseenter', () => clearInterval(autoRotate));
+        whyMeCard.addEventListener('mouseleave', () => {
+            autoRotate = setInterval(() => {
+                currentTab = (currentTab + 1) % tabCount;
+                reasonTabs[currentTab].click();
+            }, 5000);
         });
     </script>
 </body>
